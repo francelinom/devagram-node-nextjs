@@ -25,7 +25,7 @@ const upload = multer({ storage: storage });
 const uploadImagemCosmic = async (req) => {
   if (req?.file?.originalname) {
     const media_object = {
-      originalName: req.file.originalName,
+      originalname: req.file.originalname,
       buffer: req.file.buffer,
     };
 
