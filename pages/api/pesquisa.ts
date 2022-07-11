@@ -30,7 +30,7 @@ const pesquisaEndpoint = async (
             { email: { $regex: filtro, $options: "i" } },
           ],
         });
-        usuariosEncontrados[0].senha = null;
+        usuariosEncontrados.forEach((e) => (e.senha = null));
         return res.status(200).json(usuariosEncontrados);
       }
     }
