@@ -30,6 +30,25 @@ const endpointSeguir = async (
         usuarioSeguidoId: usuarioAserSeguido._id,
       });
       if (euJaSigoEsseUsuario && euJaSigoEsseUsuario.length > 0) {
+        euJaSigoEsseUsuario.forEach(
+          async (e: any) =>
+            await SeguidorModel.findByIdAndDelete({ _id: e._id })
+        );
+        usuarioLogado.seguindo--;
+        await UsuarioModel.findByIdAndUpdate(
+          { _id: usuarioLogado._id },
+          usuarioLogado
+        );
+
+        usuarioAserSeguido.seguidores--;
+        await UsuarioModel.findByIdAndUpdate(
+          { _id: usuarioAserSeguido._id },
+          usuarioAserSeguido
+        );
+
+        return res
+          .status(200)
+          .json({ msg: "Deixou de seguir o usuário com sucesso." });
       } else {
         const seguidor = {
           usuarioId: usuarioLogado._id,
