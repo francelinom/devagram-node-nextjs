@@ -10,7 +10,6 @@
   - [Funcionalidade da Aplicação](#funcionalidade-da-aplicação)
   - [Tecnologias utilizadas](#tecnologias-utilizadas)
   - [Como baixar o projeto](#como-baixar-o-projeto)
-  - [<h5>Abrir o projeto na porta: http://localhost:3000</h5>](#h5abrir-o-projeto-na-porta-httplocalhost3000h5)
   - [Autor](#autor)
   
 ---
@@ -64,8 +63,9 @@ npm run dev
 # or
 yarn dev
 
+Abrir o projeto na porta: http://localhost:3000
 ```
-<h5>Abrir o projeto na porta: [http://localhost:3000](http://localhost:3000)</h5>
+
 ---
 ## Autor
 
