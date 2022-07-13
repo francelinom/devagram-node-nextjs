@@ -3,7 +3,7 @@ import type { RespostaPadraoMsg } from "../types/RespostaPadraoMsg";
 import NextCors from "nextjs-cors";
 
 export const politicaCORS =
-  (hander: NextApiHandler) =>
+  (handler: NextApiHandler) =>
   async (req: NextApiRequest, res: NextApiResponse<RespostaPadraoMsg>) => {
     try {
       await NextCors(req, res, {
@@ -11,7 +11,7 @@ export const politicaCORS =
         methods: ["GET", "POST", "PUT"],
         optionsSuccessStatus: 200,
       });
-      return hander(req, res);
+      return handler(req, res);
     } catch (e) {
       console.log(e);
       return res
